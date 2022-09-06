@@ -2,3 +2,4 @@
 .eslintignore
 .eslintrc.js
 .prettierrc
+*.test.*
