@@ -1,6 +1,6 @@
 # eventin [![version](https://img.shields.io/npm/v/eventin)](https://www.npmjs.com/package/eventin) [![license](https://img.shields.io/npm/l/eventin)](https://github.com/mebtte/react-lrc/blob/master/LICENSE) [![](https://img.shields.io/bundlephobia/minzip/eventin)](https://bundlephobia.com/result?p=eventin)
 
-Type-restrained event emitter.
+Type-constrainted event emitter.
 
 ## Install & Usage
 
