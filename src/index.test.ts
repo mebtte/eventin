@@ -21,7 +21,7 @@ test('listen and emit', () => {
 test('emit synchronously', () => {
   const e = new Eventin<EventType, EventTypeMapData>();
   const id = 'eventin';
-  let receivedData = null;
+  let receivedData: { id: string } | null = null;
 
   e.listen(EventType.OPEN, (data) => {
     receivedData = data;
@@ -31,21 +31,36 @@ test('emit synchronously', () => {
   expect(receivedData).toEqual({ id });
 });
 
-test('unlisten', () => {
-  const e = new Eventin<EventType, EventTypeMapData>();
-  const id = 'eventin';
+describe('unlisten', () => {
+  test('unlisten by return value', () => {
+    const e = new Eventin<EventType, EventTypeMapData>();
+    const id = 'eventin';
 
-  return Promise.race([
-    new Promise((resolve) => {
-      const unlisten = e.listen(EventType.OPEN, (data) =>
-        resolve(expect(data).toEqual({ id }))
-      );
-      unlisten();
+    return Promise.race([
+      new Promise((resolve) => {
+        const unlisten = e.listen(EventType.OPEN, (data) => resolve(data));
+        unlisten();
 
-      setTimeout(() => e.emit(EventType.OPEN, { id }), 0);
-    }),
-    new Promise((resolve) => setTimeout(() => resolve(id), 1000)),
-  ]).then((data) => expect(data).toBe(id));
+        setTimeout(() => e.emit(EventType.OPEN, { id }), 0);
+      }),
+      new Promise((resolve) => setTimeout(() => resolve(id), 1000)),
+    ]).then((data) => expect(data).toBe(id));
+  });
+  test('unlisten by class method', () => {
+    const e = new Eventin<EventType, EventTypeMapData>();
+    const id = 'eventin';
+
+    return Promise.race([
+      new Promise((resolve) => {
+        const listener = (data) => resolve(data);
+        e.listen(EventType.OPEN, listener);
+        e.unlisten(EventType.OPEN, listener);
+
+        setTimeout(() => e.emit(EventType.OPEN, { id }), 0);
+      }),
+      new Promise((resolve) => setTimeout(() => resolve(id), 1000)),
+    ]).then((data) => expect(data).toBe(id));
+  });
 });
 
 test('unlistenAll', () => {

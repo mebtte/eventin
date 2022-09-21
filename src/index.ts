@@ -69,7 +69,7 @@ class Eventin<
       });
   }
 
-  private unlisten<E extends EventType>(
+  unlisten<E extends EventType>(
     eventType: E,
     listener: (data: EventTypeMapData[E]) => void,
     {

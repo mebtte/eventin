@@ -4,7 +4,8 @@
     "outDir": "dist",
     "jsx": "react",
     "esModuleInterop": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "strictNullChecks": true
   },
   "exclude": ["./dist"]
 }
