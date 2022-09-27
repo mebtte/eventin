@@ -1,4 +1,5 @@
-import Eventin from '.';
+import Eventin from './eventin';
+import { Listener } from './constants';
 
 enum EventType {
   OPEN = 'open',
@@ -52,7 +53,11 @@ describe('unlisten', () => {
 
     return Promise.race([
       new Promise((resolve) => {
-        const listener = (data) => resolve(data);
+        const listener: Listener<
+          EventType,
+          EventTypeMapData,
+          EventType.OPEN
+        > = (data) => resolve(data);
         e.listen(EventType.OPEN, listener);
         e.unlisten(EventType.OPEN, listener);
 

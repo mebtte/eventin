@@ -45,6 +45,31 @@ e.unlistenAll(EventType.OPEN);
 e.unlistenAll();
 ```
 
+Also you can use `e.unlisten` to remove a listener:
+
+```ts
+import Eventin, { Listener } from 'eventin';
+
+enum EventType {
+  OPEN = 'open',
+  CLOSE = 'close',
+  TOGGLE = 'toggle',
+}
+type EventTypeMapData = {
+  [EventType.OPEN]: { id: string };
+  [EventType.CLOSE]: { source: number };
+  [EventType.TOGGLE]: boolean;
+};
+const e = new Eventin<EventType, EventTypeMapData>();
+
+// (data: { id: string }) => void
+type OpenListener = Listener<EventType, EventTypeMapData, EventType.OPEN>;
+
+const openListener: OpenListener = (data) => console.log(data);
+e.listen(EventType.OPEN, openListener);
+e.unlisten(EventType.OPEN, openListener);
+```
+
 ## License
 
 [MIT](./LICENSE)
