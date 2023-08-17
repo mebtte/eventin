@@ -16,7 +16,11 @@
     "type": "git",
     "url": "git+https://github.com/mebtte/eventin.git"
   },
-  "author": "",
+  "author": {
+    "name": "mebtte",
+    "email": "hi@mebtte.com",
+    "url": "https://mebtte.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mebtte/eventin/issues"
