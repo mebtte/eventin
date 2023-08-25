@@ -1,7 +1,7 @@
 {
   "name": "eventin",
   "version": "1.2.0",
-  "description": "Type-constrainted event emitter.",
+  "description": "Strongly-typed event emitter.",
   "keywords": [
     "EventEmitter",
     "TypeScript"
