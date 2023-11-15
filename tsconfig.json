@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
-    "lib": ["ES2015", "DOM"],
-    "outDir": "dist",
-    "jsx": "react",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
+    "lib": ["ESNext"],
     "strictNullChecks": true
   },
-  "exclude": ["./dist", "**/*.test.ts"]
+  "exclude": ["**/*.test.ts"]
 }

@@ -1,5 +1,24 @@
-.github
+.github/
+src/
+
+# eslint
 .eslintignore
-.eslintrc.js
+.eslintrc.json
+
+# prettier
 .prettierrc
+
+# test & jest
 *.test.*
+
+# git
+.gitignore
+
+# babel
+babel.config.js
+
+# rollup
+rollup.config.js
+
+# typescript
+tsconfig.json
