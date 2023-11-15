@@ -7,11 +7,11 @@ export default [
     plugins: [typescript()],
     output: [
       {
-        file: 'dist/index.esm.js',
+        file: 'dist/eventin.esm.js',
         format: 'esm',
       },
       {
-        file: 'dist/cjs/index.js',
+        file: 'dist/eventin.cjs.js',
         format: 'cjs',
       },
     ],
@@ -19,6 +19,6 @@ export default [
   {
     input: 'src/index.ts',
     plugins: [dts()],
-    output: { file: 'dist/index.d.ts', format: 'es' },
+    output: { file: 'dist/eventin.d.ts', format: 'es' },
   },
 ];
