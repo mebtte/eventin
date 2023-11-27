@@ -1,6 +1,6 @@
 {
   "name": "eventin",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Strongly-typed event emitter.",
   "keywords": [
     "EventEmitter",
@@ -23,11 +23,6 @@
     "url": "https://mebtte.com"
   },
   "license": "MIT",
-  "scripts": {
-    "build": "rimraf dist && rollup --bundleConfigAsCjs --config rollup.config.js",
-    "test": "jest",
-    "prepulishOnly": "npm test && npm run build"
-  },
   "devDependencies": {
     "@babel/preset-env": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3",
@@ -47,6 +42,10 @@
     "rollup-plugin-dts": "^6.1.0",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "build": "rimraf dist && rollup --bundleConfigAsCjs --config rollup.config.js",
+    "test": "jest"
   },
   "files": [
     "dist"
