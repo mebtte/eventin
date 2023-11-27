@@ -1,6 +1,6 @@
 {
   "name": "eventin",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Strongly-typed event emitter.",
   "keywords": [
     "EventEmitter",
@@ -26,7 +26,7 @@
   "scripts": {
     "build": "rimraf dist && rollup --bundleConfigAsCjs --config rollup.config.js",
     "test": "jest",
-    "prepublish": "npm test && npm run build"
+    "prepulishOnly": "npm test && npm run build"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.23.3",
